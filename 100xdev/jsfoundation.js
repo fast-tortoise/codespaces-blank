@@ -54,3 +54,53 @@ animal.getHealth();
 console.log(animal.name)
 Animal.getType()
 
+
+const enemy = {
+    name : "varun",
+    strength : "warrior",
+}
+
+const strEnemy = JSON.stringify(enemy)
+
+console.log(strEnemy)
+
+const parseEnemy = JSON.parse(strEnemy)
+console.log(parseEnemy["name"])
+
+// this will give error as name should be "name", but stringyfy takes care of this, and extra comms also
+// const parseEnemy = JSON.parse(enemy)
+
+const basicData = {
+    name: "varun",
+    age: "24"
+}
+
+const additionalData = {
+    place: "blr",
+    enery: "hig and low"
+}
+
+let newObj = Object.assign({}, basicData, additionalData)
+console.log(newObj) 
+
+
+const testData = {
+    name: "varun",
+    age: "24",
+    randomNum: 103,
+    additionalData : {
+        place: "blr",
+        enery: "hig and low"
+    }
+}
+
+console.log(Object.keys(testData))
+console.log(Object.values(testData))
+console.log(Object.keys(testData.additionalData))
+
+console.log(Object.keys(testData.age)) // [ '0', '1' ]
+// The code Object.keys(testData.age) returns ['0', '1'] 
+// because testData.age is a string, and Object.keys() when applied to a string treats each character as a property with a numeric index.
+
+console.log(Object.keys(testData.randomNum)) // []
+//  Object.keys() is designed to work with objects and returns the keys of those objects.  Integers are primitive values, not objects.
