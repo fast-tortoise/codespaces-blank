@@ -104,3 +104,15 @@ console.log(Object.keys(testData.age)) // [ '0', '1' ]
 
 console.log(Object.keys(testData.randomNum)) // []
 //  Object.keys() is designed to work with objects and returns the keys of those objects.  Integers are primitive values, not objects.
+
+
+
+function sumofsomething(a,b,call){
+    console.log(a)
+    console.log(b)
+    console.log(call)
+    var calling = call(a)
+    console.log(calling)
+}
+
+sumofsomething(4,5, (n) => {return n*n})
