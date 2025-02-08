@@ -3,7 +3,9 @@ function debounce(fn, t)
 {
     let timer;
     return function(...args) {
-        clearTimeout(timer);
+        clearTimeout(timer); // first time the timer will be null, which will be harmless, but later, since object is created once, 
+                             // it will have value if the call happended 
+                             // before the fxn was supposed to be executed.
         timer = setTimeout(() => fn(...args), t);
     }
 }
